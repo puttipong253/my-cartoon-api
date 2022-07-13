@@ -5,25 +5,25 @@ const db = require('./models');
 const app = express();
 const routes = require('./routes');
 
-const corsOptions = {
-  origin: [
-    'http://localhost:3000'
-  ],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  allowedHeaders: "Content-Type, Option, Authorization, X-Session-Id",
-  credentials: true
-};
+// const corsOptions = {
+//   origin: [
+//     'http://localhost:3000'
+//   ],
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   allowedHeaders: "Content-Type, Option, Authorization, X-Session-Id",
+//   credentials: true
+// };
 
-app.use(cors(corsOptions));
-app.enable('trust proxy');
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+// app.use(cors(corsOptions));
+// app.enable('trust proxy');
+// app.use(express.json());
+// app.use(express.urlencoded({
+//   extended: true
+// }));
 
-app.use('/api', routes);
+// app.use('/api', routes);
 
 app.get("/", (req, res) => {
   res.json({
@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 //     }
 // })();
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
