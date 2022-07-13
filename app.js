@@ -5,6 +5,8 @@ const db = require('./models');
 const app = express();
 const routes = require('./routes');
 
+const PORT = process.env.PORT || 8080;
+
 // const corsOptions = {
 //   origin: [
 //     'http://localhost:3000'
@@ -39,8 +41,6 @@ app.get("/", (req, res) => {
 //         console.error('Unable to connect to the database:', error);
 //     }
 // })();
-
-const PORT = 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
