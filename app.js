@@ -1,11 +1,9 @@
 require('dotenv').config()
 const express = require("express");
-const cors = require("cors");
-const db = require('./models');
+// const cors = require("cors");
+// const db = require('./models');
 const app = express();
-const routes = require('./routes');
-
-const PORT = process.env.PORT || 8080;
+// const routes = require('./routes');
 
 // const corsOptions = {
 //   origin: [
@@ -41,6 +39,8 @@ app.get("/", (req, res) => {
 //         console.error('Unable to connect to the database:', error);
 //     }
 // })();
+
+let PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
